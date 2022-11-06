@@ -14,7 +14,7 @@ De forma resumida, una plantilla que asegura de que una máquina está aprovisio
 
 Fichero YAML donde definimos los requisitos que debe satisfacer la máquina.
 
-El objetivo del playbook es ejecutarse de la misma forma en todas las máquina, y que todas ellas terminen teniendo exactamente los mismos requisitos satisfechos. Por esa razón, el playbook es agnóstico a la máquina en cuestión. El modo en que instalará cada paquete dependerá del sistema operativo / distribución y el gestor de paquetes que disponga la máquina en cuestión, pero de eso se encargará Ansible. Nosotros sólo definimos en el playbook el "qué", no el "cómo".
+El objetivo del playbook es ejecutarse de la misma forma en todas las máquinas, y que todas ellas terminen teniendo exactamente los mismos requisitos satisfechos. Por esa razón, el playbook es agnóstico a la máquina en cuestión. El modo en que instalará cada paquete dependerá del sistema operativo / distribución y el gestor de paquetes que disponga la máquina en cuestión, pero de eso se encargará Ansible. Nosotros sólo definimos en el playbook el "qué", no el "cómo".
 
 ## Inventory
 
@@ -50,5 +50,8 @@ El playbook de este proyecto deberá aprovisionar y configurar una máquina de L
 * Configuración de MySQL
 * Configuración de permisos y conectividad
 * Opcional: PHPMyAdmin
+* Opcional: Servidor FTP
+
+Con estos requisitos quedaría una máquina con las mismas características y funcionalidades que un hosting estándar con Wordpress.
 
 Este playbook automatizaría la instalación y configuración de todos estos pasos para no tener que hacerlos manualmente en una máquina VPS.

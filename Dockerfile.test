@@ -1,0 +1,10 @@
+FROM ubuntu-server-wordpress:latest
+
+WORKDIR /www
+
+ENV APACHE_RUN_USER=www-data
+
+RUN echo source /etc/apache2/envvars >> ./run.sh
+RUN echo /usr/sbin/apache2 >> ./run.sh
+RUN chmod +x ./run.sh
+CMD tail -f /dev/null

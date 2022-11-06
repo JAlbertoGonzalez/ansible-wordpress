@@ -18,8 +18,6 @@ RUN mkdir $HOME/.ssh
 COPY id_rsa.pub ./.ssh/authorized_keys
 RUN chmod 700 ./.ssh && chmod 600 ~/.ssh/authorized_keys
 
-ENV APACHE_RUN_DIR=$HOME/www
-
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]

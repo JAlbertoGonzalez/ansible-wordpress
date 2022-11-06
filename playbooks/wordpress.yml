@@ -14,7 +14,36 @@
       apt:
         name: apache2
         state: latest
+    - name: Creates www directory
+      file:
+        path: /www
+        state: directory
+    - name: PHP
+      apt:
+        name: php
+        state: latest
+    - name: libapache2
+      apt:
+        name: libapache2-mod-php
+        state: latest
+    - name: php-mysql
+      apt:
+        name: php-mysql
+        state: latest
     - name: Install MySQL
       apt:
         name: mysql-server
         state: latest
+    - name: Install netstat
+      apt:
+        name: net-tools
+        state: latest
+    - name: Download Wordpress
+      ansible.builtin.get_url:
+        url: https://es.wordpress.org/latest-es_ES.tar.gz
+        dest: /wp.tar.gz
+    - name: Unzip Wordpress
+      ansible.builtin.unarchive:
+        src: /wp.tar.gz
+        dest: /www
+        remote_src: yes
