@@ -1,0 +1,1 @@
+ansible-playbook -i playbooks/inventory.yml playbooks/wordpress.yml

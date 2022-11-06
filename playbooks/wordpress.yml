@@ -1,0 +1,20 @@
+---
+
+- name: First playbook
+  gather_facts: true
+  hosts: all
+  remote_user: root
+  become: true
+  tasks:
+    - name: Install SSH
+      apt:
+        name: openssh-server
+        state: latest
+    - name: Install Apache server
+      apt:
+        name: apache2
+        state: latest
+    - name: Install MySQL
+      apt:
+        name: mysql-server
+        state: latest
